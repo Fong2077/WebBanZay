@@ -1,0 +1,150 @@
+﻿@model IEnumerable<Web_Shop_Zay.Models.San_Pham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+
+
+<!-- Start Banner JEJ -->
+<div id="slide_index" class="carousel slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-bs-target="#slide_index" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#slide_index" data-bs-slide-to="1"></li>
+        <li data-bs-target="#slide_index" data-bs-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" id="banner">
+        <div class="carousel-item active">
+            <a href="~/Shop/Index" style="text-decoration:none">
+                <div class="container">
+
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="~/Asset/img/model11_prev_ui.png" alt="" style="height: 500px; width: 100%">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left align-self-center">
+                                <h1 class="h1 text-success"><b>JEY</b></h1>
+                                <h3 class="h2">Nơi bạn tìm thấy sự hiện đại và tươi mới trong từng sản phẩm.</h3>
+                                <p>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container">
+                <div class="row p-5">
+                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <img class="img-fluid" src="~/Asset/img/model7-removebg-preview.png" alt="" style="height: 500px; width: auto;">
+                    </div>
+                    <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="text-align-left">
+                            <h1 class="h1">Sản Phẩm Chất Lượng Cao</h1>
+                            <h3 class="h2"></h3>
+                            <p>
+                                JEY là nơi cung cấp những sản phẩm chất lượng từ các <strong>Brand</strong>  nổi tiếng trên toàn thế giới,
+                                cùng với sự uy tín và hậu mãi hấp dẫn, luôn đem đến cho các bạn sự yên tâm và hài lòng.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container">
+                <div class="row p-5">
+                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <img class="img-fluid" src="~/Asset/img/model2_prev_ui.png" alt="" style="height: 500px;">
+                    </div>
+                    <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="text-align-left">
+                            <h1 class="h1">Bạn muốn biến bản thân thành một fashionista?</h1>
+                            <h3 class="h2"></h3>
+                            <p>
+                                Hãy theo dõi trang web của chúng tôi, nơi bạn sẽ được cập nhật những xu hướng thời trang Nam Nữ mới nhất và hot nhất.
+                                Chúng tôi có những mẫu giày hiện đại trẻ trung và năng động, giúp bạn tự tin tỏa sáng.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#slide_index" role="button" data-bs-slide="prev">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#slide_index" role="button" data-bs-slide="next">
+        <i class="fas fa-chevron-right"></i>
+    </a>
+</div>
+<!-- End Banner JEJ -->
+<!-- Start Danh Mục Của Tháng -->
+<section class="container py-5">
+    <div class="row text-center pt-3">
+        <div class="col-lg-6 m-auto">
+            <h1 class="h1">Danh Mục Của Tháng</h1>
+            <p>
+                Các Sản Phẩm bán chạy và yêu thích của tháng
+            </p>
+        </div>
+    </div>
+</section>
+<!-- End Danh Mục Của Tháng -->
+<!-- Start Featured Product -->
+<section class="" id="feat_p">
+    <div class="container py-5">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Các Sản Phẩm Nổi Bật</h1>
+                <p>
+                    Chúng tôi gợi ý cho bạn vài Sản Phẩm nổi bật được khách hàng tin dùng
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            @{
+                foreach (var i in Model)
+                {
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card h-100" id="card_black">
+                            <a href="~/ChiTiet/Index?id=@i.MaSP">
+                                <img src="~/Asset/img/SanPham/@i.Hinh" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <ul class="list-unstyled d-flex justify-content-between">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                    <li class="text-muted text-right">@i.Gia₫ </li>
+                                </ul>
+                                <a href="shop-single.html" class="h2 text-decoration-none" id="name_card">@i.TenSP</a>
+                                <p class="card-text">
+                                    <ul>
+                                        <li>Đậm chất thể thao, chất liệu siêu nhẹ</li>
+
+                                    </ul>
+                                </p>
+                                <p class="text-muted">Đánh Giá (103)</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+
+
+        </div>
+    </div>
+</section>
+<!-- End Featured Product -->
+<!-- Start Footer -->
+<!-- Start Footer -->

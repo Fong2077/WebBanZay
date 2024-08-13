@@ -1,0 +1,31 @@
+﻿@model Web_Shop_Zay.Models.Phan_Loai_SP
+
+@{
+    ViewBag.Title = "EditPhanLoai";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAmin.cshtml";
+}
+<div class="container py-5">
+    <div class="row py-5">
+        <form class="col-md-9 m-auto" action="AddPhanLoaiSP" method="post" role="form">
+            <h1>Sửa phân loại</h1>
+            <div class="mb-3">
+                <label for="inputsubject"><strong>Phân loại</strong></label>
+                <input type="text" class="form-control mt1" id="" value="@Model.MaPL" name="MaPL" placeholder="Nhập mã phân loại">
+            </div>
+            <div class="mb-3">
+                <label for=""><strong>Loại sản phẩm</strong></label>
+                <input type="text" class="form-control mt1" id="" value="@Model.MaLoai" name="MaLoai" placeholder="Nhập mã loại sản phẩm">
+            </div>
+
+            <div class="mb-3">
+                <label for=""><strong>Tên phân loại</strong></label>
+                <input type="text" class="form-control mt1" id="" value="@Model.TenPL" name="TenPL" placeholder="Nhập tên phân loại">
+            </div>
+            <div class="row">
+                <div class="col text-end mt-2">
+                    <button type="submit" class="btn btn-success btn-lg px-3">Thêm sản phẩm</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

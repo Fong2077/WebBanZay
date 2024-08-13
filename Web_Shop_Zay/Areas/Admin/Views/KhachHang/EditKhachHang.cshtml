@@ -1,0 +1,58 @@
+﻿@model Web_Shop_Zay.Models.Khach_Hang
+@{
+    ViewBag.Title = "Sửa khách hàng";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAmin.cshtml";
+}
+
+
+<div class="container py-5">
+    <div class="row py-5">
+        <form class="col-md-9 m-auto" action="EditKhachHang" method="post" role="form">
+            @Html.HiddenFor(model => model.IDKhachHang)
+            <h1>@ViewBag.Title</h1>
+            <div class="row">
+                <div class="form-group col-md-9 mb-3">
+                    <label for=""><strong>Tên khách hàng</strong></label>
+                    <input type="text" class="form-control mt-1" id="name" value="@Model.HoTenKH" name="HoTenKH" placeholder="Tên khách hàng">
+                </div>
+                <div class="form-group col-md-9 mb-3">
+                    <label for=""><strong>Upload ảnh</strong></label>
+                    <input type="file" class="form-control mt-1" id="pic" value="@Model.Anh" name="Anh" placeholder="ảnh" onchange="xemtruoc(this);">
+                    <img src="~/Asset/img/KhachHang/@Model.Anh" alt="ảnh xem trước" id="preview" style="width: 220px; height:auto;">
+                </div>
+                <div class="form-group col-md-9 mb-3">
+                    <label for=""><strong>Địa chỉ</strong></label>
+                    <input type="text" class="form-control mt-1" id="name" value="@Model.DiaChi" name="DiaChi" placeholder="Địa chỉ">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="inputsubject"><strong>Email</strong></label>
+                <input type="text" class="form-control mt1" id="" name="Email" value="@Model.Email" placeholder="Email">
+            </div>
+            <div class="mb-3">
+                <label for=""><strong>Số điện thoại</strong></label>
+                <input type="text" class="form-control mt1" id="" name="DienThoai" value="@Model.DienThoai" placeholder="Số điện thoại">
+            </div>
+
+            <div class="mb-3">
+                <label for=""><strong>Mật khẩu</strong></label>
+                <input type="password" class="form-control mt1" id="" name="MatKhau" value="@Model.MatKhau" placeholder="Mật khẩu">
+            </div>
+
+            <div class="mb-3">
+                <label for="inputsubject"><strong>Nhập lại mật khẩu</strong></label>
+                <input type="password" class="form-control mt1" id="" name="ReMatKhau" value="@Model.ReMatKhau" placeholder="Nhập lại mật khẩu">
+            </div>
+            <div class="row">
+                <div class="col text-end mt-2">
+                    <button type="submit" class="btn btn-success btn-lg px-3">Sửa</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+

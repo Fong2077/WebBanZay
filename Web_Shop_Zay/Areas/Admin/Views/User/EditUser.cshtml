@@ -1,0 +1,31 @@
+﻿@model Web_Shop_Zay.Models.User
+
+@{
+    ViewBag.Title = "Sửa quản trị";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAmin.cshtml";
+}
+<div class="container py-5">
+    <div class="row py-5">
+        <form class="col-md-9 m-auto" action="EditUser" method="post" role="form">
+            @Html.HiddenFor(model => model.IDUser)
+            <h1>@ViewBag.Title</h1>
+            <div class="mb-3">
+                <label for="inputsubject"><strong>Tên</strong></label>
+                <input type="text" class="form-control mt1" id="" name="TenUser" value="@Model.TenUser" required placeholder="Tên">
+            </div>
+            <div class="mb-3">
+                <label for="inputsubject"><strong>Mật khẩu</strong></label>
+                <input type="password" class="form-control mt1" id="" name="MatKhauUser" value="@Model.MatKhauUser" required placeholder="Mât khẩu">
+            </div>
+            <div class="mb-3">
+                <label for=""><strong>Nhập lại mật khẩu</strong></label>
+                <input type="password" class="form-control mt1" id="" name="MatKhauNhapLai" value="@Model.MatKhauNhapLai" required placeholder="Nhập lại mật khẩu">
+            </div>
+            <div class="row">
+                <div class="col text-end mt-2">
+                    <button type="submit" class="btn btn-success btn-lg px-3">Thêm</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

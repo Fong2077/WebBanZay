@@ -1,0 +1,65 @@
+﻿@model Web_Shop_Zay.Models.San_Pham
+@{
+    ViewBag.Title = "EditSanPham";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAmin.cshtml";
+}
+
+
+<div class="container py-5" >
+    <div class="row py-5">
+        <form class="col-md-9 m-auto" action="EditSanPham" method="post" role="form">
+            @Html.HiddenFor(model => model.MaSP)
+            <h1>Sửa sản phẩm</h1>
+            <div class="row">
+                <div class="form-group col-md-9 mb-3">
+                    <label for=""><strong>Tên sản phẩm</strong></label>
+                    <input type="text" class="form-control mt-1" id="name" value="@Model.TenSP" name="TenSP" placeholder="Tên sản phẩm">
+                </div>
+                <div class="form-group col-md-9 mb-3">
+                    <label for=""><strong>Upload ảnh</strong></label>
+                    <input type="file" class="form-control mt-1" id="pic" value="@Model.Hinh" name="Hinh" placeholder="ảnh" onchange="xemtruoc(this);">
+                    <img src="#" alt="ảnh xem trước" id="preview" style="width: 220px; height:auto;">
+                </div>
+                <div class="form-group col-md-9 mb-3">
+                    <label for=""><strong>Phân loại</strong></label>
+                    <input type="text" class="form-control mt-1" id="name" value="@Model.MaPL" name="MaPL" placeholder="Phân loại sản phẩm">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="inputsubject"><strong>Giá sản phẩm</strong></label>
+                <input type="text" class="form-control mt1" id="" name="Gia" value="@Model.Gia" placeholder="Giá">
+            </div>
+            <div class="mb-3">
+                <label for="inputsubject"><strong>Giá sản phẩm</strong></label>
+                <input type="text" class="form-control mt1" id="" name="GiamGia" value="@Model.GiamGia" placeholder="Giảm giá">
+            </div>
+            <div class="mb-3">
+                <label for=""><strong>Số lượng</strong></label>
+                <input type="text" class="form-control mt1" id="" name="SoLuong" value="@Model.SoLuong" placeholder="Số lượng">
+            </div>
+
+            <div class="mb-3">
+                <label for=""><strong>Tình trạng sản phẩm</strong></label>
+                <input type="text" class="form-control mt1" id="status" name="TrangThai" value="@Model.TrangThai" placeholder="Tình trạng">
+            </div>
+
+            <div class="mb-3">
+                <label for="inputsubject"><strong>Size giày</strong></label>
+                <input type="text" value="@Model.Size" name="Size">
+            </div>
+
+            <div class="mb-3">
+                <label for="inputmessage"><strong>Mô tả</strong></label>
+                <textarea type="text" class="form-control mt1" id="info" value="@Model.MoTa" placeholder="thông tin" name="MoTa" cols="30" rows="8"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col text-end mt-2">
+                    <button type="submit" class="btn btn-success btn-lg px-3">Sửa sản phẩm</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
